@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  try-vugu:
+    build: .
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -xe
+        go run devserver.go
+    ports:
+      - 80:8844
+    volumes:
+      - .:/app/try-vugu
